@@ -464,6 +464,6 @@ const dictionary = [
     'yield',
     'young',
     'youth',
-];
+].map((word) => word.toUpperCase());
 
 export default dictionary;

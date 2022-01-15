@@ -1,6 +1,6 @@
 import dictionary from './dictionary.js';
 
-const answer = 'tangy';
+const answer = dictionary[Math.floor(Math.random() * dictionary.length)];
 
 const submitBtn = document.querySelector('#submit');
 submit.maxLength = answer.length
@@ -11,7 +11,7 @@ const checkAnswer = (guess) => {
         console.log('Not long enough');
     } else if (guess === answer) {
         console.log('You Win!');
-    } else if (!dictionary.includes(guess)) {
+    } else if (!dictionary.includes(guess.toUpperCase())) {
         console.log('Not in the word list')
     } else {
         for (let i = 0; i < guess.length; i++) {
@@ -27,6 +27,10 @@ const checkAnswer = (guess) => {
         }
     }
 };
+
+submit.addEventListener('input', () => {
+    submit.value = submit.value.toUpperCase();
+})
 
 submitBtn.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
