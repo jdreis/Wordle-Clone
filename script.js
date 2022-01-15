@@ -1,3 +1,5 @@
+import dictionary from './dictionary.js';
+
 const answer = 'tangy';
 
 const submitBtn = document.querySelector('#submit');
@@ -9,6 +11,8 @@ const checkAnswer = (guess) => {
         console.log('Not long enough');
     } else if (guess === answer) {
         console.log('You Win!');
+    } else if (!dictionary.includes(guess)) {
+        console.log('Not in the word list')
     } else {
         for (let i = 0; i < guess.length; i++) {
             const g = guess[i];
