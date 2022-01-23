@@ -2,35 +2,41 @@ import dictionary from './dictionary.js';
 
 const answer = dictionary[Math.floor(Math.random() * dictionary.length)];
 
-const previousGuesses = document.querySelector('#switch')
+const previousGuesses = document.querySelector('#switch');
 
 const submitBtn = document.querySelector('#submit');
-submit.maxLength = answer.length
+submit.maxLength = answer.length;
+
+const error = document.querySelector('#error');
 
 const checkAnswer = (guess) => {
-    console.clear()
+    console.clear();
     if (guess.length !== answer.length) {
         console.log('Not long enough');
+        error.innerText = 'Not long enough';
     } else if (guess === answer) {
         console.log('You Win!');
+        error.innerText = 'You Win!';
     } else if (!dictionary.includes(guess)) {
-        console.log('Not in the word list')
+        console.log('Not in the word list');
+        error.innerText = 'Not in the word list';
     } else {
-        checkLetters(guess)
+        error.innerText = '';
+        checkLetters(guess);
     }
 };
 
-const checkLetters = (guess, answer) => {
+const checkLetters = (guess) => {
     const previousGuess = document.createElement('p');
-    previousGuess.innerText = guess;
+    // previousGuess.innerText = guess;
     
-
     for (let i = 0; i < guess.length; i++) {
-        
         const g = guess[i];
         const a = answer[i];
-const letter = document.createElement('span');
-letter.innerText = g;
+
+    const letter = document.createElement('span');
+    letter.className = 'return';
+    letter.innerText = g;
 
 
         if (g === a) {  // correct letter and correct spot
@@ -43,12 +49,11 @@ letter.innerText = g;
             // console.log(`${g} is not correct`);
             letter.style.color = 'gray'
         }
-
         previousGuess.appendChild(letter)
     }
     
     previousGuesses.appendChild(previousGuess);
-    input.value = '';
+    submit.value = '';
 };
 
 submit.addEventListener('input', () => {

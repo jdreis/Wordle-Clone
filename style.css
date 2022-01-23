@@ -59,9 +59,11 @@ body.dark {
     color: #f39c12;
 }
 
-#track-guess {
+#submit {
     margin-left: auto;
     margin-right: auto;
-    scale: 50%;
 }
 
+.return {
+    justify-content: center;
+}
