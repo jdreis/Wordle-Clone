@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Wordle Clone</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='//use.fontawesome.com/releases/v5.0.7/css/all.css'>
+    <link rel='stylesheet' href='style.css'>
 </head>
 <body>
-    <input id='submit' type='text' />
+    <div id='track-guess'> <!-- guessing box -->
+        <input id='submit' type='text'>
+    </div>
     
-    <script type="module" src="script.js"></script>   
+    <div id='switch'> <!-- dark mode / light mode -->
+        <input type='checkbox' class='checkbox' id='checkbox'>
+            <label for='checkbox' class='label'>
+                <i class='fas fa-moon' id='moon'></i>
+                <i class='fas fa-sun' id='sun'></i>
+                <div class='ball'></div>
+            </label>
+    </div>
+
+
+
+    <script type='module' src='script.js'></script>   
 </body>
 </html>
