@@ -7,24 +7,29 @@
     <title>Wordle Clone</title>
     <link rel='stylesheet' href='//use.fontawesome.com/releases/v5.0.7/css/all.css'>
     <link rel='stylesheet' href='style.css'>
+    <!-- <link rel="stylesheet" href="lightSwitch.css"> -->
 </head>
 <body>
-    <div id='track-guess'></div> <!-- boxes for guesses -->
-
+<!-- heading -->
+    <h1 class="heading">WORDLE</h1>
+    <hr style="width:500px">
+<!-- box for guess -->
+    <div id='track-guess'></div>
     <input id='submit' type='text'>
-
-    <p id="error" style="color: red"></p>
-
-    <div id='switch'> <!-- dark mode / light mode -->
+<!-- info -->
+    <p id="info" style="color: red"></p>
+    
+<!-- dark/light toggle -->
+     <!-- <div id='switch'> 
         <input type='checkbox' class='checkbox' id='checkbox'>
             <label for='checkbox' class='label'>
                 <i class='fas fa-moon' id='moon'></i>
                 <i class='fas fa-sun' id='sun'></i>
                 <div class='ball'></div>
-            </label>
-    </div>
+         </label>
+    </div>  -->
 
-
+    
 
     <script type='module' src='script.js'></script>   
 </body>

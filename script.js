@@ -1,59 +1,61 @@
 import dictionary from './dictionary.js';
 
-const answer = dictionary[Math.floor(Math.random() * dictionary.length)];
+const answer = "HELLO" //dictionary[Math.floor(Math.random() * dictionary.length)];
 
-const previousGuesses = document.querySelector('#switch');
+const previousGuesses = document.querySelector('#track-guess');
 
 const submitBtn = document.querySelector('#submit');
 submit.maxLength = answer.length;
 
-const error = document.querySelector('#error');
+const info = document.querySelector('#info');
 
 const checkAnswer = (guess) => {
-    console.clear();
     if (guess.length !== answer.length) {
-        console.log('Not long enough');
-        error.innerText = 'Not long enough';
+        info.innerText = 'Not long enough';
     } else if (guess === answer) {
-        console.log('You Win!');
-        error.innerText = 'You Win!';
+        info.innerText = 'You Win!';
+        info.style.color = '#0f0'
+        const correctAnswer = document.createElement('p')
+        correctAnswer.style.color = '#0f0'
+        previousGuesses.appendChild(correctAnswer);
+        correctAnswer.innerText = answer;
+        document.body.removeChild(submit)
     } else if (!dictionary.includes(guess)) {
-        console.log('Not in the word list');
-        error.innerText = 'Not in the word list';
+        info.innerText = 'Not in the word list';
     } else {
-        error.innerText = '';
+        info.innerText = '';
         checkLetters(guess);
-    }
+        if (previousGuesses.children.length === 6) {
+            info.innerText = 'You lose!'
+            document.body.removeChild(submit);
+        }
+    };
 };
 
 const checkLetters = (guess) => {
     const previousGuess = document.createElement('p');
-    // previousGuess.innerText = guess;
     
+
     for (let i = 0; i < guess.length; i++) {
         const g = guess[i];
         const a = answer[i];
 
     const letter = document.createElement('span');
-    letter.className = 'return';
     letter.innerText = g;
 
-
         if (g === a) {  // correct letter and correct spot
-            // console.log(`${g} is in the right spot`);
-            letter.style.color = 'green'
-        } else if (answer.includes(g)) { // correct letter and wrong spot
-            // console.log(`${g} is in the wrong spot`);
-            letter.style.color = 'yellow'
+            letter.style.color = 'green';
+        } else if (answer.includes(g)) { // correct letter and wrong spot   
+            letter.style.color = 'yellow';
         } else { // incorrect letter for word
-            // console.log(`${g} is not correct`);
-            letter.style.color = 'gray'
-        }
-        previousGuess.appendChild(letter)
-    }
+            letter.style.color = 'gray';
+        };
+        previousGuess.appendChild(letter);
+    };
     
     previousGuesses.appendChild(previousGuess);
     submit.value = '';
+
 };
 
 submit.addEventListener('input', () => {
@@ -66,8 +68,12 @@ submitBtn.addEventListener('keypress', (e) => {
     }
 });
 
-const darkMode = document.getElementById('checkbox');
 
-darkMode.addEventListener('change', () => {
-    document.body.classList.toggle('dark')
-});
+
+// dark/light toggle
+
+// const lightMode = document.getElementById('checkbox');
+
+// lightMode.addEventListener('change', () => {
+//     document.body.classList.toggle('light')
+// });
