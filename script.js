@@ -9,6 +9,9 @@ submit.maxLength = answer.length;
 
 const info = document.querySelector('#info');
 
+const replayBtn = document.querySelector('#btn');
+replayBtn.style.visibility="hidden";
+
 const checkAnswer = (guess) => {
     if (guess.length !== answer.length) {
         info.innerText = 'Not long enough';
@@ -20,15 +23,17 @@ const checkAnswer = (guess) => {
         previousGuesses.appendChild(correctAnswer);
         correctAnswer.innerText = answer;
         document.body.removeChild(submit)
+        replayBtn.style.visibility = 'visible'
     } else if (!dictionary.includes(guess)) {
         info.innerText = 'Not in the word list';
     } else {
         info.innerText = '';
         checkLetters(guess);
         if (previousGuesses.children.length === 6) {
-            info.innerText = 'You lose!'
+            info.innerText = 'You lose!';
             document.body.removeChild(submit);
-        }
+            replayBtn.style.visibility = 'visible';
+        };
     };
 };
 

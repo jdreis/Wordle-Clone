@@ -9,7 +9,7 @@ body {
 }
 
 .heading {
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center; 
     font-size: 40px; 
     margin: auto;
@@ -21,7 +21,7 @@ body {
     font-size: 40px;
     width: 200px;
     text-align: center;
-    display:block;
+    display: block;
     margin: auto;
 } 
 
@@ -31,5 +31,35 @@ body {
 
 p {
     text-align: center;
+}
+
+.break {
+    width: 500px;
+}
+
+#btn {
+    display: flex;
+    justify-content: center;
+}
+
+.againbtn {
+    background-color: #0083a0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin: 10px 0;
+    transition-duration: 0.4s;
+    
+}
+
+.againbtn:hover {
+    background: #52b7cec4;
 }
 

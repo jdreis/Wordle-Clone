@@ -12,13 +12,16 @@
 <body>
 <!-- heading -->
     <h1 class="heading">WORDLE</h1>
-    <hr style="width:500px">
+    <hr class="break">
 <!-- box for guess -->
     <div id='track-guess'></div>
     <input id='submit' type='text'>
-<!-- info -->
-    <p id="info" style="color: red"></p>
+<!-- status information -->
+    <p id="info" style="color: rgb(255, 100, 100)"></p>
     
+    <div id='btn'>
+        <button class='againbtn' onClick="window.location.reload();">New Game</button>
+    </div>    
 <!-- dark/light toggle -->
      <!-- <div id='switch'> 
         <input type='checkbox' class='checkbox' id='checkbox'>
