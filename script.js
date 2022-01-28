@@ -52,8 +52,6 @@ const checkLetters = (guess) => {
             letter.style.color = 'green';
         } else if (answer.includes(g.length)) { // correct letter and wrong spot   
             letter.style.color = 'yellow';
-        // } else if () {
-        //     letter.style.color = 'gray'
         } else  { // incorrect letter for word
             letter.style.color = 'gray';
         }

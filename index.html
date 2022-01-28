@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Wordle Clone</title>
-    <link rel='stylesheet' href='//use.fontawesome.com/releases/v5.0.7/css/all.css'>
+    <script src="https://kit.fontawesome.com/2b0ca710b8.js" crossorigin="anonymous"></script>
     <link rel='stylesheet' href='style.css'>
     <!-- <link rel="stylesheet" href="lightSwitch.css"> -->
 </head>
@@ -18,10 +18,46 @@
     <input id='submit' type='text'>
 <!-- status information -->
     <p id="info" style="color: rgb(255, 100, 100)"></p>
-    
+<!-- New Game -->
     <div id='btn'>
         <button class='againbtn' onClick="window.location.reload();">New Game</button>
     </div>    
+<!-- Keyboard -->
+<div id="keyboard">
+    <div id="keys">
+        <button type="button" id="key">Q</button>
+        <button type="button" id="key">W</button>
+        <button type="button" id="key">E</button>
+        <button type="button" id="key">R</button>
+        <button type="button" id="key">T</button>
+        <button type="button" id="key">Y</button>
+        <button type="button" id="key">U</button>
+        <button type="button" id="key">I</button>
+        <button type="button" id="key">O</button>
+        <button type="button" id="key">P</button>
+        <br>
+        <button type="button" id="key">A</button>
+        <button type="button" id="key">S</button>
+        <button type="button" id="key">D</button>
+        <button type="button" id="key">F</button>
+        <button type="button" id="key">G</button>
+        <button type="button" id="key">H</button>
+        <button type="button" id="key">J</button>
+        <button type="button" id="key">K</button>
+        <button type="button" id="key">L</button>
+        <br>
+        <button type="button" id="enter">ENTER</button>
+        <button type="button" id="key">Z</button>
+        <button type="button" id="key">X</button>
+        <button type="button" id="key">C</button>
+        <button type="button" id="key">V</button>
+        <button type="button" id="key">B</button>
+        <button type="button" id="key">N</button>
+        <button type="button" id="key">M</button>
+        <i id="backspace" class="fas fa-backspace"></i>
+    </div>
+</div>
+
 <!-- dark/light toggle -->
      <!-- <div id='switch'> 
         <input type='checkbox' class='checkbox' id='checkbox'>
@@ -31,8 +67,6 @@
                 <div class='ball'></div>
          </label>
     </div>  -->
-
-    
 
     <script type='module' src='script.js'></script>   
 </body>
