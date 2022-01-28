@@ -1,6 +1,6 @@
 import dictionary from './dictionary.js';
 
-const answer = "HELLO" //dictionary[Math.floor(Math.random() * dictionary.length)];
+const answer = dictionary[Math.floor(Math.random() * dictionary.length)];
 
 const previousGuesses = document.querySelector('#track-guess');
 
@@ -30,7 +30,7 @@ const checkAnswer = (guess) => {
         info.innerText = '';
         checkLetters(guess);
         if (previousGuesses.children.length === 6) {
-            info.innerText = 'You lose!';
+            info.innerText = `You Lose. \n \n The word was ${answer}.`;
             document.body.removeChild(submit);
             replayBtn.style.visibility = 'visible';
         };
@@ -50,11 +50,13 @@ const checkLetters = (guess) => {
 
         if (g === a) {  // correct letter and correct spot
             letter.style.color = 'green';
-        } else if (answer.includes(g)) { // correct letter and wrong spot   
+        } else if (answer.includes(g.length)) { // correct letter and wrong spot   
             letter.style.color = 'yellow';
-        } else { // incorrect letter for word
+        // } else if () {
+        //     letter.style.color = 'gray'
+        } else  { // incorrect letter for word
             letter.style.color = 'gray';
-        };
+        }
         previousGuess.appendChild(letter);
     };
     
