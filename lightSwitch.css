@@ -4,6 +4,7 @@
 
 body {
     display: flex;
+    justify-content: flex-start;
     background-color:#292C35;
 }
 
@@ -12,7 +13,7 @@ body.light {
 }
 
 #switch {
-    position: fixed;
+    position: relative;
     top: 2vh;
     left: 2vh;
     height: 100vh;

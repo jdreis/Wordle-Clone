@@ -17,9 +17,9 @@ const checkAnswer = (guess) => {
         info.innerText = 'Not long enough';
     } else if (guess === answer) {
         info.innerText = 'You Win!';
-        info.style.color = '#0f0'
+        info.style.color = 'rgb(24, 206, 24)'
         const correctAnswer = document.createElement('p')
-        correctAnswer.style.color = '#0f0'
+        correctAnswer.style.color = 'rgb(24, 206, 24)'
         previousGuesses.appendChild(correctAnswer);
         correctAnswer.innerText = answer;
         document.body.removeChild(submit)
@@ -39,7 +39,6 @@ const checkAnswer = (guess) => {
 
 const checkLetters = (guess) => {
     const previousGuess = document.createElement('p');
-    
 
     for (let i = 0; i < guess.length; i++) {
         const g = guess[i];
@@ -49,18 +48,16 @@ const checkLetters = (guess) => {
     letter.innerText = g;
 
         if (g === a) {  // correct letter and correct spot
-            letter.style.color = 'green';
-        } else if (answer.includes(g.length)) { // correct letter and wrong spot   
-            letter.style.color = 'yellow';
-        } else  { // incorrect letter for word
-            letter.style.color = 'gray';
-        }
+            letter.style.color = 'rgb(24, 206, 24)';
+        } else if (answer.includes(g)) { // correct letter and wrong spot   
+            letter.style.color = 'rgb(255, 235, 14)';
+        } else { // incorrect letter for word
+            letter.style.color = 'rgb(114, 114, 114)';
+        };
         previousGuess.appendChild(letter);
     };
-    
     previousGuesses.appendChild(previousGuess);
     submit.value = '';
-
 };
 
 submit.addEventListener('input', () => {
@@ -70,13 +67,51 @@ submit.addEventListener('input', () => {
 submitBtn.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         checkAnswer(submit.value)
-    }
+    };
 });
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]');
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget);
+        openModal(modal);
+    });
+});
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+        closeModal(modal)
+    })
+})
+
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal');
+        closeModal(modal);
+    });
+});
+
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active');
+    overlay.classList.add('active');
+};
+
+function closeModal(modal) {
+    if (modal == null) return 
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+};
+
+
 
 
 
 // dark/light toggle
-
 // const lightMode = document.getElementById('checkbox');
 
 // lightMode.addEventListener('change', () => {

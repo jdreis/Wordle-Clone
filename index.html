@@ -12,6 +12,35 @@
 <body>
 <!-- heading -->
     <h1 class="heading">WORDLE</h1>
+    
+    <div class="how-to">
+        <button data-modal-target='#modal' id='icon'><i class="fas fa-info-circle"></i></button>
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="title">How to Play</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>    
+            <div class="modal-body">
+                Guess the word in SIX tries or less. 
+                <br>
+                <br>
+                Each of your guesses must be a valid 5 letter word. Press ENTER or RETURN to sumbit your guess.
+                <br>
+                <br>
+                After you submit your guess, the color of the letter will change depending on how close your guess was to the correct answer.
+                <br>
+                <br>
+                The letter will display <span style='color:rgb(24, 206, 24)'>GREEN</span> if the letter is in the word and in the correct spot.
+                <br>
+                <br>
+                The letter will display <span style='color:rgb(255, 235, 14)'>YELLOW</span> if that letter is in the word but incorrect spot.
+                <br>
+                <br>
+                The letter will display <span style='color:rgb(114, 114, 114)'>GRAY</span> if the letter is not included in the word.
+            </div>
+        </div>    
+    </div> 
+    <div id="overlay"></div>
     <hr class="break">
 <!-- box for guess -->
     <div id='track-guess'></div>
@@ -23,8 +52,9 @@
         <button class='againbtn' onClick="window.location.reload();">New Game</button>
     </div>    
 <!-- Keyboard -->
-<div id="keyboard">
+<!-- <div id="keyboard">
     <div id="keys">
+        <div id="row">
         <button type="button" id="key">Q</button>
         <button type="button" id="key">W</button>
         <button type="button" id="key">E</button>
@@ -36,6 +66,9 @@
         <button type="button" id="key">O</button>
         <button type="button" id="key">P</button>
         <br>
+        </div>
+
+        <div id="row">
         <button type="button" id="key">A</button>
         <button type="button" id="key">S</button>
         <button type="button" id="key">D</button>
@@ -46,6 +79,9 @@
         <button type="button" id="key">K</button>
         <button type="button" id="key">L</button>
         <br>
+        </div>
+        
+        <div id="row">
         <button type="button" id="enter">ENTER</button>
         <button type="button" id="key">Z</button>
         <button type="button" id="key">X</button>
@@ -54,19 +90,20 @@
         <button type="button" id="key">B</button>
         <button type="button" id="key">N</button>
         <button type="button" id="key">M</button>
-        <i id="backspace" class="fas fa-backspace"></i>
+        <button><i id="backspace" class="fas fa-backspace"></i></button>
+        </div>
     </div>
-</div>
+</div> -->
 
 <!-- dark/light toggle -->
-     <!-- <div id='switch'> 
+    <!-- <div id='switch'> 
         <input type='checkbox' class='checkbox' id='checkbox'>
             <label for='checkbox' class='label'>
                 <i class='fas fa-moon' id='moon'></i>
                 <i class='fas fa-sun' id='sun'></i>
                 <div class='ball'></div>
          </label>
-    </div>  -->
+    </div>   -->
 
     <script type='module' src='script.js'></script>   
 </body>

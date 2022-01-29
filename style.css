@@ -5,7 +5,6 @@
 
 body {
     background-color: #292C35;
-    
 }
 
 .heading {
@@ -16,13 +15,85 @@ body {
     letter-spacing: 3px;
 }
 
+#icon {
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transition: 200ms ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    color: black;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1)
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+    font-size:  1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+    text-align: center;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
 
 #submit {
     font-size: 40px;
     width: 200px;
     text-align: center;
     display: block;
-    margin: auto;
+    margin: 30px auto;
+    border-radius: 4px;
 } 
 
 #info {
@@ -62,7 +133,13 @@ p {
     background: #52b7cec4;
 }
 
-#keyboard {
+@media only screen and (max-width: 600px) {
+    .break {
+        max-width: 80%;
+    }
+  }
+
+/* #keyboard {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -72,6 +149,8 @@ p {
     box-shadow: gray;
     user-select: none;
     transition: bottom 0.4s;
+    border-radius: 8px;
+    margin: 20px 0;
 }
 
 #keys {
@@ -93,4 +172,4 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-}
+} */
