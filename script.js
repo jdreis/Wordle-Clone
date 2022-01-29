@@ -70,6 +70,7 @@ submitBtn.addEventListener('keypress', (e) => {
     };
 });
 
+// HOW TO PLAY POP-UP
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById('overlay');
