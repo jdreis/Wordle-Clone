@@ -3,19 +3,26 @@
 }
 
 body {
-    display: flex;
-    justify-content: flex-start;
     background-color:#292C35;
 }
 
 body.light {
-    background-color: #fff;
+    background-color:rgb(245, 236, 223) ;
+    
+}
+
+body.light .heading {
+    color: black;
+}
+
+body.light #icon {
+    color: black;
 }
 
 #switch {
-    position: relative;
-    top: 2vh;
-    left: 2vh;
+    position: fixed;
+    top: 2.8%;
+    left: 66%;
     height: 100vh;
     margin: 0;
     transition: background 0.2s linear;
@@ -61,4 +68,10 @@ body.light {
 .fas.fa-sun {
     color: #f39c12;
     font-size: 16px;
+}
+
+@media only screen and (max-width: 600px)  {
+    #switch {
+        left: 40vh;
+    }
 }

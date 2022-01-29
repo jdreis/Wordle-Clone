@@ -50,7 +50,7 @@ const checkLetters = (guess) => {
         if (g === a) {  // correct letter and correct spot
             letter.style.color = 'rgb(24, 206, 24)';
         } else if (answer.includes(g)) { // correct letter and wrong spot   
-            letter.style.color = 'rgb(255, 235, 14)';
+            letter.style.color = 'rgb(233, 147, 42)';
         } else { // incorrect letter for word
             letter.style.color = 'rgb(114, 114, 114)';
         };
@@ -86,8 +86,8 @@ overlay.addEventListener('click', () => {
     const modals = document.querySelectorAll('.modal.active')
     modals.forEach(modal => {
         closeModal(modal)
-    })
-})
+    });
+});
 
 closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -108,13 +108,9 @@ function closeModal(modal) {
     overlay.classList.remove('active');
 };
 
-
-
-
-
 // dark/light toggle
-// const lightMode = document.getElementById('checkbox');
+const lightMode = document.getElementById('checkbox');
 
-// lightMode.addEventListener('change', () => {
-//     document.body.classList.toggle('light')
-// });
+lightMode.addEventListener('change', () => {
+    document.body.classList.toggle('light')
+});
