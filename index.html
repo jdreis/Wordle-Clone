@@ -5,21 +5,21 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Wordle Project</title>
-    <script src="https://kit.fontawesome.com/2b0ca710b8.js" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/2b0ca710b8.js' crossorigin='anonymous'></script>
     <link rel='stylesheet' href='style.css'>
-    <link rel="stylesheet" href="lightSwitch.css">
+    <link rel='stylesheet' href='lightSwitch.css'>
 </head>
 <body>
 <!-- heading -->
-    <h1 class="heading">WORDLE</h1>
+    <h1 class='heading'>WORDLE</h1>
 <!-- how to play pop-up -->
-    <button data-modal-target='#modal' id='icon'><i class="fas fa-info-circle"></i></button>
-    <div class="modal" id="modal">
-        <div class="modal-header">
-            <div class="title">How to Play</div>
-            <button data-close-button class="close-button">&times;</button>
+    <button data-modal-target='#modal' id='icon'><i class='fas fa-info-circle'></i></button>
+    <div class='modal' id='modal'>
+        <div class='modal-header'>
+            <div class='title'>How to Play</div>
+            <button data-close-button class='close-button'>&times;</button>
         </div>    
-        <div class="modal-body">
+        <div class='modal-body'>
             Guess the word in SIX tries.
             <br>
             <br>
@@ -29,27 +29,26 @@
             After you submit your guess, the letter will change colors depending on how close your guess was to the answer.
             <br>
             <br>
-            The letter will display <span id="color" style='color:rgb(24, 206, 24)'>GREEN</span> if the letter correct and in the correct spot.
+            The letter will display <span id='color' style='color:rgb(24, 206, 24)'>GREEN</span> if the letter correct and in the correct spot.
             <br>
             <br>
-            The letter will display <span id="color" style='color:rgb(210, 131, 35)'>ORANGE</span> if that letter is in the word but incorrect spot.
+            The letter will display <span id='color' style='color:rgb(210, 131, 35)'>ORANGE</span> if that letter is in the word but incorrect spot.
             <br>
             <br>
-            The letter will display <span id="color" style='color:rgb(114, 114, 114)'>GRAY</span> if the letter is not included in the word.
+            The letter will display <span id='color' style='color:rgb(114, 114, 114)'>GRAY</span> if the letter is not included in the word.
         </div>
     </div>    
-    <div id="overlay"></div>
-    <hr class="break">
+    <div id='overlay'></div>
+    <hr class='break'>
 <!-- box for guess -->
     <div id='track-guess'></div>
     <input id='submit' type='text'>
 <!-- status information -->
-    <p id="info" style="color: rgb(255, 100, 100)"></p>
+    <p id='info' style='color: rgb(255, 100, 100)'></p>
 <!-- new game btn -->
     <div id='btn'>
-        <button class='againbtn' onClick="window.location.reload();">New Game</button>
+        <button class='againbtn' onClick='window.location.reload();'>New Game</button>
     </div>    
-
 <!-- dark/light toggle -->
     <div id='switch'> 
         <input type='checkbox' class='checkbox' id='checkbox'>

@@ -10,22 +10,20 @@ submit.maxLength = answer.length;
 const info = document.querySelector('#info');
 
 const replayBtn = document.querySelector('#btn');
-replayBtn.style.visibility="hidden";
-
-
+replayBtn.style.visibility='hidden';
 
 const checkAnswer = (guess) => {
     if (guess.length !== answer.length) {
         info.innerText = 'Not long enough';
     } else if (guess === answer) {
         info.innerText = 'You Win!';
-        info.style.color = 'rgb(24, 206, 24)'
-        const correctAnswer = document.createElement('p')
-        correctAnswer.style.color = 'rgb(24, 206, 24)'
+        info.style.color = 'rgb(24, 206, 24)';
+        const correctAnswer = document.createElement('p');
+        correctAnswer.style.color = 'rgb(24, 206, 24)';
         previousGuesses.appendChild(correctAnswer);
         correctAnswer.innerText = answer;
-        document.body.removeChild(submit)
-        replayBtn.style.visibility = 'visible'
+        document.body.removeChild(submit);
+        replayBtn.style.visibility = 'visible';
     } else if (!dictionary.includes(guess)) {
         info.innerText = 'Not in the word list';
     } else {
@@ -78,7 +76,7 @@ submit.addEventListener('input', () => {
 
 submitBtn.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-        checkAnswer(submit.value)
+        checkAnswer(submit.value);
     };
 });
 
@@ -95,9 +93,9 @@ openModalButtons.forEach(button => {
 });
 
 overlay.addEventListener('click', () => {
-    const modals = document.querySelectorAll('.modal.active')
+    const modals = document.querySelectorAll('.modal.active');
     modals.forEach(modal => {
-        closeModal(modal)
+        closeModal(modal);
     });
 });
 
@@ -124,5 +122,5 @@ function closeModal(modal) {
 const lightMode = document.getElementById('checkbox');
 
 lightMode.addEventListener('change', () => {
-    document.body.classList.toggle('light')
+    document.body.classList.toggle('light');
 });
