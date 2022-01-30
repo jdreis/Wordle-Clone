@@ -12,6 +12,8 @@ const info = document.querySelector('#info');
 const replayBtn = document.querySelector('#btn');
 replayBtn.style.visibility="hidden";
 
+
+
 const checkAnswer = (guess) => {
     if (guess.length !== answer.length) {
         info.innerText = 'Not long enough';
@@ -40,6 +42,14 @@ const checkAnswer = (guess) => {
 const checkLetters = (guess) => {
     const previousGuess = document.createElement('p');
 
+    const charCounts = {};
+
+    for (let i = 0; i < answer.length; i++) {
+        const c = answer[i];
+        const prev = charCounts[c] || 0;
+        charCounts[c] = prev + 1;
+    }
+
     for (let i = 0; i < guess.length; i++) {
         const g = guess[i];
         const a = answer[i];
@@ -49,8 +59,10 @@ const checkLetters = (guess) => {
 
         if (g === a) {  // correct letter and correct spot
             letter.style.color = 'rgb(24, 206, 24)';
-        } else if (answer.includes(g)) { // correct letter and wrong spot   
+            charCounts[g]--;
+        } else if (charCounts[g]) { // correct letter and wrong spot   
             letter.style.color = 'rgb(233, 147, 42)';
+            charCounts[g]--;
         } else { // incorrect letter for word
             letter.style.color = 'rgb(114, 114, 114)';
         };

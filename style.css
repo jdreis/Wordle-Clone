@@ -35,7 +35,7 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     z-index: 10;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(255, 255, 255);
     color: black;
     width: 500px;
     max-width: 80%;
@@ -88,7 +88,6 @@ body {
     opacity: 1;
     pointer-events: all;
 }
-
 
 #submit {
     font-size: 40px;

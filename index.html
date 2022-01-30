@@ -12,7 +12,7 @@
 <body>
 <!-- heading -->
     <h1 class="heading">WORDLE</h1>
-<!-- How to Play    -->
+<!-- how to play pop-up -->
     <button data-modal-target='#modal' id='icon'><i class="fas fa-info-circle"></i></button>
     <div class="modal" id="modal">
         <div class="modal-header">
@@ -32,13 +32,12 @@
             The letter will display <span id="color" style='color:rgb(24, 206, 24)'>GREEN</span> if the letter correct and in the correct spot.
             <br>
             <br>
-            The letter will display <span id="color" style='color:rgb(233, 147, 42)'>ORANGE</span> if that letter is in the word but incorrect spot.
+            The letter will display <span id="color" style='color:rgb(210, 131, 35)'>ORANGE</span> if that letter is in the word but incorrect spot.
             <br>
             <br>
             The letter will display <span id="color" style='color:rgb(114, 114, 114)'>GRAY</span> if the letter is not included in the word.
         </div>
     </div>    
-    
     <div id="overlay"></div>
     <hr class="break">
 <!-- box for guess -->
@@ -46,7 +45,7 @@
     <input id='submit' type='text'>
 <!-- status information -->
     <p id="info" style="color: rgb(255, 100, 100)"></p>
-<!-- New Game -->
+<!-- new game btn -->
     <div id='btn'>
         <button class='againbtn' onClick="window.location.reload();">New Game</button>
     </div>    
